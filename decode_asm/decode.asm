@@ -94,7 +94,8 @@ section .text
 		mov r12, dictionary
 		result_loop:
 			mov r8, [r12 + r14] ; dictionary value
-			cmp r8, 0
+			cmp r8, 0 ; note: I had previously used r11 but syscalls messed with
+			; it
 			je skip_print ; skip if none counted
 			
 			mov rax, r13
