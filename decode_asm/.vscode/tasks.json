@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "asm: build",
+			"command": "nasm -felf64 -o decode.o decode.asm && ld -o decode decode.o && rm decode.o",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			}	
+		},
+		{
+			"type": "shell",
+			"label": "asm: build debug",
+			"command": "nasm -felf64 -g -F dwarf -o decode.o decode.asm && ld -o decode decode.o",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			}	
+		}
+	]
+}

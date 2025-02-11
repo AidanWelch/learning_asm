@@ -1,0 +1,26 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch",
+			"type": "cppdbg",
+			"request": "launch",
+			"preLaunchTask": "asm: build debug",
+			"program": "${workspaceFolder}/decode",
+			"stopAtEntry": false,
+			"MIMode": "gdb",
+			"cwd": "${workspaceFolder}",
+			//"externalConsole": true, // external console is broken on wsl
+			"setupCommands": [
+				{
+					"description": "pretty-print",
+					"text": "-enable-pretty-printing"
+				},
+				{
+					"description": "use intel syntax",
+					"text": "set disassembly-flavor intel"
+				}
+			]
+		}
+	]
+}
