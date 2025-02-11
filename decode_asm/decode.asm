@@ -70,7 +70,7 @@ section .text
 			mov rax, 0 ; system call for read
 			mov rdi, 0 ; file handle 0 is stdin
 			mov rsi, rsp ; address to input
-			mov rdx, 1 ; read 2 bytes (input and newline)
+			mov rdx, 1 ; read 1 byte
 			syscall
 			
 			mov r13, [rsp]
